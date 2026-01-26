@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOLKATA | Premium Ethnic Wear</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Bindings */
+        .font-heading { font-family: 'Playfair Display', serif; }
+        .font-body { font-family: 'Montserrat', sans-serif; }
+        
+        /* Custom Colors Variables for Tailwind Arbitrary usage reference */
+        :root {
+            --color-burgundy: #800020;
+            --color-gold: #D4AF37;
+            --color-cream: #F9F9F9;
+            --color-charcoal: #333333;
+        }
+
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #800020; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+        /* Modal Animation */
+        .modal-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-[#F9F9F9] text-[#333333] font-body antialiased selection:bg-[#D4AF37] selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-[#D4AF37]/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-heading text-3xl tracking-widest font-bold text-[#800020]">
+                        KOLKATA
+                        <span class="block text-[10px] tracking-[0.3em] text-[#D4AF37] text-center font-normal uppercase mt-[-4px]">Heritage</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Links -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="text-[#333333] hover:text-[#800020] transition font-medium text-sm tracking-wide uppercase">Home</a>
+                    <a href="#collection" class="text-[#333333] hover:text-[#800020] transition font-medium text-sm tracking-wide uppercase">Collection</a>
+                    <a href="#about" class="text-[#333333] hover:text-[#800020] transition font-medium text-sm tracking-wide uppercase">About</a>
+                </div>
+
+                <!-- Mobile Menu Button (Visual Only) -->
+                <div class="md:hidden">
+                    <button class="text-[#800020] focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-[85vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=1000&auto=format&fit=crop" 
+                 alt="Indian Saree Texture" 
+                 class="w-full h-full object-cover object-center" />
+            <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-[#F9F9F9]"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-12">
+            <p class="text-[#D4AF37] font-medium tracking-[0.2em] mb-4 uppercase text-sm md:text-base animate-[fadeIn_1s_ease-out]">Elegance of Bengal</p>
+            <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl text-white font-bold mb-6 drop-shadow-lg leading-tight">
+                Premium Ethnic Wear for the <span class="italic font-light">Modern Soul</span>
+            </h1>
+            <div class="mt-8">
+                <a href="#collection" class="inline-block px-10 py-4 bg-[#800020] text-white font-medium tracking-widest text-sm uppercase hover:bg-[#D4AF37] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    Shop The Collection
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Collection Section -->
+    <section id="collection" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="font-heading text-4xl md:text-5xl text-[#800020] mb-4">Curated Masterpieces</h2>
+            <div class="w-24 h-1 bg-[#D4AF37] mx-auto mb-4"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto font-light">Handpicked silks and intricate weaves designed to tell a story of tradition and luxury.</p>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <!-- Product 1 -->
+            <div class="group bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                <div class="relative overflow-hidden h-96 w-full bg-gray-200">
+                    <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=1000&auto=format&fit=crop" 
+                         alt="Royal Banarasi Silk" 
+                         class="h-full w-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 text-xs font-bold tracking-widest text-[#800020] uppercase">Bestseller</div>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="font-heading text-2xl text-[#333333] mb-2 group-hover:text-[#800020] transition">Royal Banarasi Silk</h3>
+                    <p class="text-[#D4AF37] font-semibold text-lg mb-4">₹12,500</p>
+                    <button onclick="openModal('Royal Banarasi Silk', '12500')" 
+                            class="w-full py-3 border border-[#800020] text-[#800020] hover:bg-[#800020] hover:text-white transition uppercase text-sm font-medium tracking-wider">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="group bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                <div class="relative overflow-hidden h-96 w-full bg-gray-200">
+                    <img src="https://images.unsplash.com/photo-1596700874057-074c76b10700?q=80&w=1000&auto=format&fit=crop" 
+                         alt="Midnight Velvet Lehenga" 
+                         class="h-full w-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="font-heading text-2xl text-[#333333] mb-2 group-hover:text-[#800020] transition">Midnight Velvet</h3>
+                    <p class="text-[#D4AF37] font-semibold text-lg mb-4">₹18,999</p>
+                    <button onclick="openModal('Midnight Velvet', '18999')" 
+                            class="w-full py-3 border border-[#800020] text-[#800020] hover:bg-[#800020] hover:text-white transition uppercase text-sm font-medium tracking-wider">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="group bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                <div class="relative overflow-hidden h-96 w-full bg-gray-200">
+                    <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=1000&auto=format&fit=crop" 
+                         alt="Golden Kanjeevaram" 
+                         class="h-full w-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="font-heading text-2xl text-[#333333] mb-2 group-hover:text-[#800020] transition">Golden Kanjeevaram</h3>
+                    <p class="text-[#D4AF37] font-semibold text-lg mb-4">₹24,500</p>
+                    <button onclick="openModal('Golden Kanjeevaram', '24500')" 
+                            class="w-full py-3 border border-[#800020] text-[#800020] hover:bg-[#800020] hover:text-white transition uppercase text-sm font-medium tracking-wider">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="group bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                <div class="relative overflow-hidden h-96 w-full bg-gray-200">
+                    <img src="https://images.unsplash.com/photo-1621644783321-c58063228966?q=80&w=1000&auto=format&fit=crop" 
+                         alt="Handloom Jamdani" 
+                         class="h-full w-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute top-4 right-4 bg-[#D4AF37] px-3 py-1 text-xs font-bold tracking-widest text-white uppercase">New Arrival</div>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="font-heading text-2xl text-[#333333] mb-2 group-hover:text-[#800020] transition">Handloom Jamdani</h3>
+                    <p class="text-[#D4AF37] font-semibold text-lg mb-4">₹8,750</p>
+                    <button onclick="openModal('Handloom Jamdani', '8750')" 
+                            class="w-full py-3 border border-[#800020] text-[#800020] hover:bg-[#800020] hover:text-white transition uppercase text-sm font-medium tracking-wider">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="group bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                <div class="relative overflow-hidden h-96 w-full bg-gray-200">
+                    <img src="https://images.unsplash.com/photo-1601332857410-b1480f7636e0?q=80&w=1000&auto=format&fit=crop" 
+                         alt="Embroidered Georgette" 
+                         class="h-full w-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="font-heading text-2xl text-[#333333] mb-2 group-hover:text-[#800020] transition">Embroidered Georgette</h3>
+                    <p class="text-[#D4AF37] font-semibold text-lg mb-4">₹15,200</p>
+                    <button onclick="openModal('Embroidered Georgette', '15200')" 
+                            class="w-full py-3 border border-[#800020] text-[#800020] hover:bg-[#800020] hover:text-white transition uppercase text-sm font-medium tracking-wider">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="group bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                <div class="relative overflow-hidden h-96 w-full bg-gray-200">
+                    <img src="https://images.unsplash.com/photo-1627289568913-91ee769741c8?q=80&w=1000&auto=format&fit=crop" 
+                         alt="Classic Tussar Silk" 
+                         class="h-full w-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="font-heading text-2xl text-[#333333] mb-2 group-hover:text-[#800020] transition">Classic Tussar Silk</h3>
+                    <p class="text-[#D4AF37] font-semibold text-lg mb-4">₹10,500</p>
+                    <button onclick="openModal('Classic Tussar Silk', '10500')" 
+                            class="w-full py-3 border border-[#800020] text-[#800020] hover:bg-[#800020] hover:text-white transition uppercase text-sm font-medium tracking-wider">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About / Trust Section -->
+    <section id="about" class="bg-[#800020] py-16 text-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="font-heading text-3xl md:text-4xl mb-8">The Art of Heritage</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6">
+                    <div class="text-[#D4AF37] text-4xl mb-4">✦</div>
+                    <h3 class="font-heading text-xl mb-2">Authentic Weaves</h3>
+                    <p class="text-white/80 text-sm leading-relaxed">Sourced directly from the master artisans of West Bengal.</p>
+                </div>
+                <div class="p-6 border-l-0 md:border-l md:border-r border-white/20">
+                    <div class="text-[#D4AF37] text-4xl mb-4">✦</div>
+                    <h3 class="font-heading text-xl mb-2">Premium Quality</h3>
+                    <p class="text-white/80 text-sm leading-relaxed">Every thread is inspected to ensure the highest standard of luxury.</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-[#D4AF37] text-4xl mb-4">✦</div>
+                    <h3 class="font-heading text-xl mb-2">Secure Checkout</h3>
+                    <p class="text-white/80 text-sm leading-relaxed">Direct WhatsApp coordination ensures personalized service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#333333] text-white py-12 border-t-4 border-[#D4AF37]">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+                <span class="font-heading text-2xl tracking-widest font-bold">KOLKATA</span>
+                <p class="text-sm text-gray-400 mt-2">© 2023 Kolkata Boutique. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-[#D4AF37] transition">Instagram</a>
+                <a href="#" class="text-gray-400 hover:text-[#D4AF37] transition">Facebook</a>
+                <a href="#" class="text-gray-400 hover:text-[#D4AF37] transition">Pinterest</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Background backdrop -->
+        <div class="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+                <!-- Modal Panel -->
+                <div class="relative transform overflow-hidden bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg border-t-4 border-[#D4AF37] modal-fade-in">
+                    
+                    <!-- Close Button -->
+                    <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-[#800020] transition">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+
+                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                        <div class="mt-3 text-left">
+                            <h3 class="font-heading text-2xl leading-6 text-[#800020] mb-1" id="modalProductTitle">Product Name</h3>
+                            <p class="text-[#D4AF37] font-semibold text-lg mb-6" id="modalProductPrice">₹0</p>
+                            
+                            <!-- Form -->
+                            <form id="orderForm" class="space-y-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                                    <input type="text" id="name" class="mt-1 block w-full border border-gray-300 px-3 py-2 focus:border-[#800020] focus:ring-[#800020] focus:outline-none sm:text-sm" placeholder="Jane Doe">
+                                </div>
+
+                                <div>
+                                    <label for="address" class="block text-sm font-medium text-gray-700">Delivery Address</label>
+                                    <textarea id="address" rows="3" class="mt-1 block w-full border border-gray-300 px-3 py-2 focus:border-[#800020] focus:ring-[#800020] focus:outline-none sm:text-sm" placeholder="Street, City, Zip Code..."></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="size" class="block text-sm font-medium text-gray-700">Size</label>
+                                    <select id="size" class="mt-1 block w-full border border-gray-300 px-3 py-2 focus:border-[#800020] focus:ring-[#800020] focus:outline-none sm:text-sm bg-white">
+                                        <option value="S">Small (S)</option>
+                                        <option value="M">Medium (M)</option>
+                                        <option value="L">Large (L)</option>
+                                        <option value="XL">Extra Large (XL)</option>
+                                        <option value="XXL">Double XL (XXL)</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Payment Method</label>
+                                    <div class="flex space-x-4">
+                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="payment" value="COD" class="text-[#800020] focus:ring-[#800020]" checked>
+                                            <span class="ml-2 text-sm text-gray-700">COD</span>
+                                        </label>
+                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="payment" value="UPI" class="text-[#800020] focus:ring-[#800020]">
+                                            <span class="ml-2 text-sm text-gray-700">UPI</span>
+                                        </label>
+                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="payment" value="Bank Transfer" class="text-[#800020] focus:ring-[#800020]">
+                                            <span class="ml-2 text-sm text-gray-700">Bank Transfer</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                        <button type="button" onclick="confirmOrder()" class="inline-flex w-full justify-center bg-[#800020] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#D4AF37] sm:ml-3 sm:w-auto transition uppercase tracking-wider">
+                            Confirm Order
+                        </button>
+                        <button type="button" onclick="closeModal()" class="mt-3 inline-flex w-full justify-center bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto uppercase tracking-wider">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // State Variables
+        let currentProduct = "";
+        let currentPrice = "";
+        const modal = document.getElementById('checkoutModal');
+        const productTitleEl = document.getElementById('modalProductTitle');
+        const productPriceEl = document.getElementById('modalProductPrice');
+
+        // Open Modal
+        function openModal(product, price) {
+            currentProduct = product;
+            currentPrice = price;
+            
+            productTitleEl.textContent = currentProduct;
+            productPriceEl.textContent = "₹" + Number(currentPrice).toLocaleString('en-IN');
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        // Close Modal
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // WhatsApp Checkout Logic
+        function confirmOrder() {
+            const name = document.getElementById('name').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const size = document.getElementById('size').value;
+            const payment = document.querySelector('input[name="payment"]:checked').value;
+
+            // Simple Validation
+            if (!name || !address) {
+                alert("Please fill in your Name and Address to proceed.");
+                return;
+            }
+
+            // Construct WhatsApp Message
+            const phoneNumber = "91123456789"; // Target number
+            const message = `Hello, I want to order: ${currentProduct}.
+Price: ₹${currentPrice}
+My Details ->
+Name: ${name},
+Address: ${address},
+Size: ${size},
+Payment: ${payment}`;
+
+            // Create URL
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+            // Redirect
+            window.open(whatsappUrl, '_blank');
+            closeModal();
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
