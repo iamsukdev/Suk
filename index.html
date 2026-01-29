@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sukdev Mondal | Digital Marketer & SMM Strategist.</title>
+  <meta name="google-site-verification" content="LLD2Inl2GphwRmdoqOpHO7pMgHlAnFLvg2KgcFuMzro" />
+  <meta name="description" content="Sukdev Mondal is a digital marketer, smm strategist, web designer.leveraging innovative marketing and SEO techniques to enhance brand visibility and engagement.">
+<meta name="author" content="Sukdev Mondal">
+<meta name="title" content="Sukdev Mondal | Digital Marketer & SMM Strategist.">
+<meta property="og:url" content="https://sukdev.netlify.app" />
+ <meta property="og:type" content="website" />
+ <link rel="icon" type="/images/Sukdev_Mondal.jpg" href="/images/Sukdev_Mondal.jpg">
+    
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS via CDN (v4 browser build) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style>
+    :root {
+      --page-bg: #000000;
+      --page-bg-alt: #050505;
+      --surface-light: #f9fafb;
+      --surface-muted: #e5e7eb;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(156, 163, 175, 0.4);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: var(--page-bg);
+      color: var(--text-main);
+    }
+
+    .font-display {
+      font-family: 'Playfair Display', 'Times New Roman', serif;
+    }
+
+    /* Hero background pattern – monochrome only */
+    .hero-grid {
+      background-image:
+        radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.06), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.04), transparent 55%),
+        linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.04) 0,
+          rgba(255, 255, 255, 0.02) 1px,
+          transparent 1px,
+          transparent 50%
+        );
+      background-size: auto, auto, 100% 32px;
+      border-bottom: 1px solid rgba(156, 163, 175, 0.14);
+    }
+
+    .avatar-shadow {
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.85);
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 700ms ease-out, transform 700ms ease-out;
+    }
+
+    .reveal-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-padding {
+      padding-top: 4.5rem;
+      padding-bottom: 4.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .section-padding {
+        padding-top: 5.5rem;
+        padding-bottom: 5.5rem;
+      }
+    }
+
+    /* Video wrapper keeps 16:9 ratio */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      overflow: hidden;
+      border-radius: 1.25rem;
+      background-color: #000000;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Card hover lift */
+    .lift {
+      transition: transform 230ms ease, box-shadow 230ms ease, border-color 230ms ease;
+    }
+
+    .lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+      border-color: rgba(107, 114, 128, 1);
+    }
+
+    /* Primary pill button (black) */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1.8rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid #000000;
+      background-color: #000000;
+      color: #f9fafb;
+      transition: background-color 200ms ease, color 200ms ease, transform 200ms ease,
+        box-shadow 200ms ease, border-color 200ms ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #ffffff;
+      color: #000000;
+      border-color: #000000;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    /* Outline button (light on dark image overlays) */
+    .btn-outline-light {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.55rem 1.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(249, 250, 251, 0.7);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #f9fafb;
+      background-color: transparent;
+      transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease,
+        transform 200ms ease;
+    }
+
+    .btn-outline-light:hover {
+      background-color: #f9fafb;
+      color: #000000;
+      border-color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* Footer links */
+    .footer-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: color 200ms ease;
+    }
+
+    .footer-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -0.1rem;
+      width: 0;
+      height: 1px;
+      background-color: #f9fafb;
+      transition: width 200ms ease;
+    }
+
+    .footer-link:hover::after {
+      width: 100%;
+    }
+
+    .footer-link:hover {
+      color: #ffffff;
+    }
+
+    /* Social icon in footer */
+    .footer-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease,
+        transform 200ms ease, box-shadow 200ms ease;
+    }
+
+    .footer-icon:hover {
+      background-color: #f9fafb;
+      color: #000000;
+      border-color: #f9fafb;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #050505;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #1f2933;
+      border-radius: 999px;
+      border: 2px solid #050505;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #323f4b;
+    }
+  </style>
+</head>
+<body class="bg-black text-neutral-100 antialiased">
+  <!-- Hero / About -->
+  <section id="about" class="min-h-screen bg-black flex items-center">
+    <div class="w-full hero-grid">
+      <div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+        <div class="flex flex-col md:flex-row items-center md:items-end gap-10 md:gap-16 reveal">
+          <!-- Portrait -->
+          <div class="flex-1 flex justify-center md:justify-start">
+            <div
+              class="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-3xl overflow-hidden border border-neutral-700 bg-neutral-900 avatar-shadow"
+            >
+              <img
+                src="/images/Sukdev_Mondal.jpg?auto=compress&cs=tinysrgb&w=800&h=800&fit=crop&grayscale=1"
+                alt="Portrait of SUKDEV"
+                class="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- Statement -->
+          <div class="flex-1 max-w-xl">
+            <p class="text-xs tracking-[0.28em] uppercase text-neutral-400 mb-4">Personal Brand • Digital Marketer</p>
+            <p class="text-xl sm:text-2xl md:text-3xl font-semibold leading-relaxed text-neutral-50">
+              SUKDEV MONDAL is a Digital Marketer, SMM Strategist, Web Designer. leveraging innovative marketing and SEO techniques to enhance brand visibility and engagement.
+            </p>
+            <p class="mt-4 text-sm sm:text-base text-neutral-400">
+              No funnels. No clutter. Just a focused surface for connection, collaboration, and a
+              body of work that rewards attention.
+            </p>
+          </div>
+        </div>
+
+        <!-- Brand wordmark -->
+        <div class="mt-12 text-center reveal">
+          <p class="text-xs uppercase tracking-[0.28em] text-neutral-500 mb-3">Presenting</p>
+          <h1
+            class="font-display text-4xl sm:text-5xl md:text-6xl tracking-[0.38em] text-white inline-block"
+          >
+            S U K D E V
+          </h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Links / Link in Bio -->
+  <section id="social" class="section-padding bg-white text-neutral-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="mb-10 text-center reveal">
+        <h2 class="font-display text-2xl sm:text-3xl mb-2">Connect</h2>
+        <p class="text-sm sm:text-base text-neutral-500 max-w-xl mx-auto">
+          Choose where to follow, read, or reach out. One identity, multiple surfaces.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 reveal">
+        <!-- Facebook -->
+        <a
+          href="https://facebook.com/SukdevMondalOfficial"
+          target="_blank"
+          rel="noopener"
+          class="flex flex-col items-center justify-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-5 text-xs font-semibold uppercase tracking-[0.16em] hover:bg-black hover:text-white hover:border-black transition-colors duration-200 ease-out hover:-translate-y-0.5 transform"
+        >
+          <span
+            class="flex items-center justify-center w-9 h-9 rounded-full border border-neutral-400 text-[0.8rem]"
+          >
+            f
+          </span>
+          <span>Facebook</span>
+        </a>
+
+        <!-- Instagram -->
+        <a
+          href="https://instagram.com/itssukdev"
+          target="_blank"
+          rel="noopener"
+          class="flex flex-col items-center justify-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-5 text-xs font-semibold uppercase tracking-[0.16em] hover:bg-black hover:text-white hover:border-black transition-colors duration-200 ease-out hover:-translate-y-0.5 transform"
+        >
+          <span
+            class="flex items-center justify-center w-9 h-9 rounded-full border border-neutral-400 text-[0.8rem]"
+          >
+            IG
+          </span>
+          <span>Instagram</span>
+        </a>
+
+        <!-- Substack -->
+        <a
+          href="https://sukdevz.substack.com"
+          target="_blank"
+          rel="noopener"
+          class="flex flex-col items-center justify-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-5 text-xs font-semibold uppercase tracking-[0.16em] hover:bg-black hover:text-white hover:border-black transition-colors duration-200 ease-out hover:-translate-y-0.5 transform"
+        >
+          <span
+            class="flex items-center justify-center w-9 h-9 rounded-full border border-neutral-400 text-[0.72rem]"
+          >
+            SS
+          </span>
+          <span>Substack</span>
+        </a>
+
+        <!-- Bluesky -->
+        <a
+          href="https://sukdevz.bsky.app"
+          target="_blank"
+          rel="noopener"
+          class="flex flex-col items-center justify-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-5 text-xs font-semibold uppercase tracking-[0.16em] hover:bg-black hover:text-white hover:border-black transition-colors duration-200 ease-out hover:-translate-y-0.5 transform"
+        >
+          <span
+            class="flex items-center justify-center w-9 h-9 rounded-full border border-neutral-400 text-[0.8rem]"
+          >
+            B
+          </span>
+          <span>Bluesky</span>
+        </a>
+
+        <!-- Twitter / X -->
+        <a
+          href="https://x.com/heysukdev"
+          target="_blank"
+          rel="noopener"
+          class="flex flex-col items-center justify-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-5 text-xs font-semibold uppercase tracking-[0.16em] hover:bg-black hover:text-white hover:border-black transition-colors duration-200 ease-out hover:-translate-y-0.5 transform"
+        >
+          <span
+            class="flex items-center justify-center w-9 h-9 rounded-full border border-neutral-400 text-[0.8rem]"
+          >
+            X
+          </span>
+          <span>Twitter</span>
+        </a>
+
+        <!-- More -->
+        <a
+          href="https://sukdevz.blogspot.com"
+          target="_blank"
+          rel="noopener"
+          class="flex flex-col items-center justify-center gap-2 rounded-full border border-neutral-900 bg-black px-4 py-5 text-xs font-semibold uppercase tracking-[0.16em] text-white hover:bg-white hover:text-black hover:border-black transition-colors duration-200 ease-out hover:-translate-y-0.5 transform"
+        >
+          <span
+            class="flex items-center justify-center w-9 h-9 rounded-full border border-neutral-500 text-[1rem]"
+          >
+            +
+          </span>
+          <span>More</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery with Text & CTA -->
+  <section id="gallery" class="section-padding bg-neutral-50 text-neutral-900">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-2xl mb-10 reveal">
+        <h2 class="font-display text-2xl sm:text-3xl mb-2">Selected Frames</h2>
+        <p class="text-sm sm:text-base text-neutral-500">
+          A monochrome snapshot of work, process, and the spaces in between. Each frame is a
+          doorway into a deeper body of work.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <!-- Item 1 -->
+        <article
+          class="group relative overflow-hidden rounded-3xl border border-neutral-200 bg-black text-white lift reveal"
+        >
+          <img
+            src="https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop&grayscale=1"
+            alt="Minimal desk with notebook and laptop"
+            class="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
+          <div class="absolute inset-x-4 bottom-4 flex flex-col gap-2">
+            <h3 class="text-sm font-semibold uppercase tracking-[0.16em]">
+              Working Sessions
+            </h3>
+            <p class="text-xs text-neutral-200 max-w-xs">
+              Quiet, focused blocks where signal is separated from noise.
+            </p>
+            <a href="https://example.com" target="_blank" rel="noopener" class="btn-outline-light">
+              Explore
+            </a>
+          </div>
+        </article>
+
+        <!-- Item 2 -->
+        <article
+          class="group relative overflow-hidden rounded-3xl border border-neutral-200 bg-black text-white lift reveal"
+        >
+          <img
+            src="https://images.pexels.com/photos/934011/pexels-photo-934011.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop&grayscale=1"
+            alt="City skyline in monochrome"
+            class="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
+          <div class="absolute inset-x-4 bottom-4 flex flex-col gap-2">
+            <h3 class="text-sm font-semibold uppercase tracking-[0.16em]">
+              Urban Signals
+            </h3>
+            <p class="text-xs text-neutral-200 max-w-xs">
+              Reading the city as a system of patterns, not just a backdrop.
+            </p>
+            <a href="https://example.com" target="_blank" rel="noopener" class="btn-outline-light">
+              Explore
+            </a>
+          </div>
+        </article>
+
+        <!-- Item 3 -->
+        <article
+          class="group relative overflow-hidden rounded-3xl border border-neutral-200 bg-black text-white lift reveal"
+        >
+          <img
+            src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop&grayscale=1"
+            alt="Close-up of hands writing"
+            class="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
+          <div class="absolute inset-x-4 bottom-4 flex flex-col gap-2">
+            <h3 class="text-sm font-semibold uppercase tracking-[0.16em]">
+              Drafts & Notes
+            </h3>
+            <p class="text-xs text-neutral-200 max-w-xs">
+              Pages where future essays, talks, and projects begin.
+            </p>
+            <a href="https://example.com" target="_blank" rel="noopener" class="btn-outline-light">
+              Explore
+            </a>
+          </div>
+        </article>
+
+        <!-- Item 4 -->
+        <article
+          class="group relative overflow-hidden rounded-3xl border border-neutral-200 bg-black text-white lift reveal"
+        >
+          <img
+            src="https://images.pexels.com/photos/765816/pexels-photo-765816.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop&grayscale=1"
+            alt="Audience in a dark room watching a talk"
+            class="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
+          <div class="absolute inset-x-4 bottom-4 flex flex-col gap-2">
+            <h3 class="text-sm font-semibold uppercase tracking-[0.16em]">
+              Rooms & Stages
+            </h3>
+            <p class="text-xs text-neutral-200 max-w-xs">
+              Where ideas are tested live, in real time.
+            </p>
+            <a href="https://example.com" target="_blank" rel="noopener" class="btn-outline-light">
+              Explore
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Embedded Video Slider -->
+  <section id="videos" class="section-padding bg-black text-neutral-100">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="max-w-2xl mb-10 reveal">
+        <h2 class="font-display text-2xl sm:text-3xl mb-2">Video Surface</h2>
+        <p class="text-sm sm:text-base text-neutral-400">
+          Talks, walkthroughs, and quiet deep dives. Scroll horizontally or swipe to move between
+          videos.
+        </p>
+      </div>
+
+      <div class="relative reveal">
+        <div id="videoSlider" class="relative">
+          <!-- Slide 1 -->
+          <div class="video-slide">
+            <div class="bg-neutral-900 rounded-3xl p-3 sm:p-4">
+              <div class="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="Designing a Monochrome Personal Surface"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="mt-4 flex items-start gap-3">
+                <div
+                  class="mt-1 flex items-center justify-center h-9 w-9 rounded-full border border-neutral-500"
+                >
+                  <span
+                    class="inline-block h-0 w-0 border-l-[8px] border-l-white border-y-[5px] border-y-transparent ml-0.5"
+                  ></span>
+                </div>
+                <div>
+                  <h3 class="text-sm sm:text-base font-semibold">
+                    Designing a Monochrome Personal Surface
+                  </h3>
+                  <p class="mt-1 text-xs sm:text-sm text-neutral-400 max-w-xl">
+                    How to think about your online presence as a single, coherent surface – not a
+                    scattered collection of profiles.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="video-slide hidden">
+            <div class="bg-neutral-900 rounded-3xl p-3 sm:p-4">
+              <div class="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/5qap5aO4i9A"
+                  title="Systems for Consistent Creative Output"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="mt-4 flex items-start gap-3">
+                <div
+                  class="mt-1 flex items-center justify-center h-9 w-9 rounded-full border border-neutral-500"
+                >
+                  <span
+                    class="inline-block h-0 w-0 border-l-[8px] border-l-white border-y-[5px] border-y-transparent ml-0.5"
+                  ></span>
+                </div>
+                <div>
+                  <h3 class="text-sm sm:text-base font-semibold">
+                    Systems for Consistent Creative Output
+                  </h3>
+                  <p class="mt-1 text-xs sm:text-sm text-neutral-400 max-w-xl">
+                    Behind the structures that turn notes into essays, talks, and recurring series –
+                    without adding unnecessary drama.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="video-slide hidden">
+            <div class="bg-neutral-900 rounded-3xl p-3 sm:p-4">
+              <div class="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/9bZkp7q19f0"
+                  title="Signal, Narrative, Momentum"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="mt-4 flex items-start gap-3">
+                <div
+                  class="mt-1 flex items-center justify-center h-9 w-9 rounded-full border border-neutral-500"
+                >
+                  <span
+                    class="inline-block h-0 w-0 border-l-[8px] border-l-white border-y-[5px] border-y-transparent ml-0.5"
+                  ></span>
+                </div>
+                <div>
+                  <h3 class="text-sm sm:text-base font-semibold">Signal, Narrative, Momentum</h3>
+                  <p class="mt-1 text-xs sm:text-sm text-neutral-400 max-w-xl">
+                    A live breakdown of how narratives compound over time and why the story around
+                    your work matters as much as the work itself.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider controls -->
+        <button
+          type="button"
+          data-direction="prev"
+          class="absolute -left-2 sm:-left-4 top-1/2 -translate-y-1/2 rounded-full border border-neutral-600 bg-neutral-950/90 p-2.5 sm:p-3 text-neutral-100 hover:bg-white hover:text-black transition-colors duration-200 shadow-lg"
+        >
+          <span class="sr-only">Previous video</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="h-4 w-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6" />
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          data-direction="next"
+          class="absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 rounded-full border border-neutral-600 bg-neutral-950/90 p-2.5 sm:p-3 text-neutral-100 hover:bg-white hover:text-black transition-colors duration-200 shadow-lg"
+        >
+          <span class="sr-only">Next video</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="h-4 w-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6" />
+          </svg>
+        </button>
+
+        <!-- Dots -->
+        <div class="mt-6 flex items-center justify-center gap-3">
+          <button
+            type="button"
+            class="h-2.5 w-2.5 rounded-full bg-white"
+            aria-label="Go to video 1"
+            data-slide-to="0"
+          ></button>
+          <button
+            type="button"
+            class="h-2.5 w-2.5 rounded-full bg-neutral-600"
+            aria-label="Go to video 2"
+            data-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            class="h-2.5 w-2.5 rounded-full bg-neutral-600"
+            aria-label="Go to video 3"
+            data-slide-to="2"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="section-padding bg-white text-neutral-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="max-w-2xl mb-10 reveal">
+        <h2 class="font-display text-2xl sm:text-3xl mb-2">Contact</h2>
+        <p class="text-sm sm:text-base text-neutral-500">
+          Speaking invitations, collaborations, or a thoughtful note. Share a little context and a
+          way to reply, and everything else can unfold from there.
+        </p>
+      </div>
+
+      <div
+        class="rounded-3xl bg-neutral-50 border border-neutral-200 px-5 py-6 sm:px-8 sm:py-8 md:px-10 md:py-10 reveal"
+      >
+        <form id="contact-form" class="space-y-6" novalidate>
+          <div class="grid gap-5 md:grid-cols-2">
+            <div>
+              <label
+                for="name"
+                class="block text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2"
+              >
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="block w-full rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 shadow-sm focus:border-black focus:ring-2 focus:ring-black/20 outline-none"
+                placeholder="How should we address you?"
+              />
+            </div>
+
+            <div>
+              <label
+                for="email"
+                class="block text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2"
+              >
+                Email Address
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="block w-full rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 shadow-sm focus:border-black focus:ring-2 focus:ring-black/20 outline-none"
+                placeholder="you@example.com"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label
+              for="subject"
+              class="block text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2"
+            >
+              Subject
+            </label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              required
+              class="block w-full rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 shadow-sm focus:border-black focus:ring-2 focus:ring-black/20 outline-none"
+              placeholder="What would you like to talk about?"
+            />
+          </div>
+
+          <div>
+            <label
+              for="message"
+              class="block text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2"
+            >
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="block w-full rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 shadow-sm focus:border-black focus:ring-2 focus:ring-black/20 outline-none resize-none"
+              placeholder="Share a few lines of context, a question, or an idea you’d like to explore together."
+            ></textarea>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <p class="text-xs text-neutral-500 max-w-md">
+              This form is a front-end demonstration. In production, submissions can be wired to
+              email or a lightweight form service.
+            </p>
+            <button type="submit" class="btn-primary">
+              <span>Send Message</span>
+            </button>
+          </div>
+
+          <p id="form-status" class="text-xs text-neutral-500 mt-2 hidden"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (Flipkart-style inspired) -->
+  <footer class="bg-neutral-950 text-neutral-300 pt-12">
+    <div class="max-w-6xl mx-auto px-6 pb-10">
+      <div class="grid gap-10 md:grid-cols-4">
+        <!-- Brand & Summary -->
+        <div class="space-y-4">
+          <div class="text-2xl sm:text-3xl font-display tracking-tight text-white">SUKDEV</div>
+          <p class="text-sm text-neutral-400">
+            A monochrome, distraction-free surface for considered, long-horizon work.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-4"
+          >
+            Quick Links
+          </p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#about" class="footer-link">About</a></li>
+            <li><a href="#gallery" class="footer-link">Gallery</a></li>
+            <li><a href="#videos" class="footer-link">Videos</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+            
+            
+          </ul>
+        </div>
+        
+        
+        
+        <!-- Other Links -->
+        <div>
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-4"
+          >
+            Other Links
+          </p>
+          <ul class="space-y-2 text-sm">
+            
+            
+            <li><a href="/Crossy-Road-Game" class="footer-link">Play Game</a></li>
+            <li><a href="/feedback.html" class="footer-link">Feedback</a></li>
+            <li><a href="/Privacy-Policy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="/terms-of-use.html" class="footer-link">Terms of Use</a></li>
+
+              </ul>
+        </div>
+        
+
+        <!-- Social Icons -->
+        <div>
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-4"
+          >
+            Social
+          </p>
+          <div class="flex flex-wrap gap-3 text-sm">
+            <a href="https://facebook.com/SukdevMondalOfficial" target="_blank" rel="noopener" class="footer-icon">F</a>
+            <a href="https://instagram.com/itssukdev" target="_blank" rel="noopener" class="footer-icon">IG</a>
+            <a href="https://sukdevz.substack.com" target="_blank" rel="noopener" class="footer-icon">SS</a>
+            <a href="https://sukdevz.bsky.app" target="_blank" rel="noopener" class="footer-icon">B</a>
+            <a href="https://x.com/heysukdev" target="_blank" rel="noopener" class="footer-icon">X</a>
+          </div>
+        </div>
+
+        <!-- Notes & Copyright -->
+        <div class="space-y-3 text-sm">
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500"
+          >
+            Notes
+          </p>
+          <p class="text-neutral-400">
+            All views expressed are personal. Nothing here is investment, legal, or professional
+            advice.
+          </p>
+          <p class="text-xs text-neutral-500">© 2026 SUKDEV. All rights reserved.</p>
+          <p class="text-xs text-neutral-500">Made with ❤️, intention, and clean typography.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript: scroll reveal, slider, touch support, contact form -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Scroll-based reveal animations
+      var revealElements = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(
+          function (entries, obs) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-visible');
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.16 }
+        );
+
+        revealElements.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        // Fallback: show all
+        revealElements.forEach(function (el) {
+          el.classList.add('reveal-visible');
+        });
+      }
+
+      // Video slider logic with auto-rotate and touch support
+      var slider = document.querySelector('#videoSlider');
+      if (slider) {
+        var slides = slider.querySelectorAll('.video-slide');
+        var dots = document.querySelectorAll('[data-slide-to]');
+        var controls = document.querySelectorAll('[data-direction]');
+        var current = 0;
+        var intervalId = null;
+
+        function goToSlide(index) {
+          if (!slides.length) return;
+          var total = slides.length;
+          current = (index + total) % total;
+
+          slides.forEach(function (slide, i) {
+            if (i === current) {
+              slide.classList.remove('hidden');
+            } else {
+              slide.classList.add('hidden');
+            }
+          });
+
+          dots.forEach(function (dot, i) {
+            if (i === current) {
+              dot.classList.remove('bg-neutral-600');
+              dot.classList.add('bg-white');
+            } else {
+              dot.classList.add('bg-neutral-600');
+              dot.classList.remove('bg-white');
+            }
+          });
+        }
+
+        function nextSlide() {
+          goToSlide(current + 1);
+        }
+
+        function prevSlide() {
+          goToSlide(current - 1);
+        }
+
+        function startAutoRotate() {
+          stopAutoRotate();
+          intervalId = window.setInterval(nextSlide, 10000);
+        }
+
+        function stopAutoRotate() {
+          if (intervalId) {
+            window.clearInterval(intervalId);
+            intervalId = null;
+          }
+        }
+
+        controls.forEach(function (control) {
+          control.addEventListener('click', function () {
+            var dir = control.getAttribute('data-direction');
+            if (dir === 'next') {
+              nextSlide();
+            } else {
+              prevSlide();
+            }
+            startAutoRotate();
+          });
+        });
+
+        dots.forEach(function (dot, i) {
+          dot.addEventListener('click', function () {
+            goToSlide(i);
+            startAutoRotate();
+          });
+        });
+
+        // Touch / swipe support for mobile
+        var startX = 0;
+        var touchThreshold = 40;
+
+        slider.addEventListener(
+          'touchstart',
+          function (e) {
+            if (e.touches && e.touches.length === 1) {
+              startX = e.touches[0].clientX;
+            }
+          },
+          { passive: true }
+        );
+
+        slider.addEventListener(
+          'touchend',
+          function (e) {
+            if (!e.changedTouches || !e.changedTouches.length) return;
+            var endX = e.changedTouches[0].clientX;
+            var diffX = endX - startX;
+            if (Math.abs(diffX) > touchThreshold) {
+              if (diffX < 0) {
+                nextSlide();
+              } else {
+                prevSlide();
+              }
+              startAutoRotate();
+            }
+          },
+          { passive: true }
+        );
+
+        // Pause auto-rotate on hover (desktop)
+        slider.addEventListener('mouseenter', stopAutoRotate);
+        slider.addEventListener('mouseleave', startAutoRotate);
+
+        // Init
+        goToSlide(0);
+        startAutoRotate();
+      }
+
+      // Contact form demo handling
+      var form = document.querySelector('#contact-form');
+      var statusEl = document.querySelector('#form-status');
+      if (form && statusEl) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          var formData = new FormData(form);
+          var name = (formData.get('name') || '').toString().trim();
+          var email = (formData.get('email') || '').toString().trim();
+          var subject = (formData.get('subject') || '').toString().trim();
+          var message = (formData.get('message') || '').toString().trim();
+
+          if (!name || !email || !subject || !message) {
+            statusEl.textContent = 'Please fill in all fields before sending.';
+            statusEl.classList.remove('hidden');
+            return;
+          }
+
+          statusEl.textContent = 'Thank you. Your message has been captured. This demo does not send email yet.';
+          statusEl.classList.remove('hidden');
+
+          form.reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

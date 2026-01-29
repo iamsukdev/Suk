@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="LLD2Inl2GphwRmdoqOpHO7pMgHlAnFLvg2KgcFuMzro" />
+    <title>Review us</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        .stars { font-size: 30px; cursor: pointer; color: gray; }
+        .stars.selected { color: gold; }
+    </style>
+</head>
+<body>
+    <h1>Review Us</h1>
+    <p>Please give us Star rating based on your experience:</p>
+    
+    <div id="star-container">
+        <span class="stars" onclick="rate(1)">★</span>
+        <span class="stars" onclick="rate(2)">★</span>
+        <span class="stars" onclick="rate(3)">★</span>
+        <span class="stars" onclick="rate(4)">★</span>
+        <span class="stars" onclick="rate(5)">★</span>
+    </div>
+
+    <script>
+        function rate(stars) {
+            let starElements = document.querySelectorAll(".stars");
+            starElements.forEach((star, index) => {
+                star.classList.toggle("selected", index < stars);
+            });
+
+            if (stars <= 2) {
+                window.location.href = "https://forms.gle/F9aKYkYYciStBfzy6"; // এখানে url1 লিখে দিন
+            } else {
+                window.location.href = "https://sukdev.netlify.app/reviews"; // এখানে url2 লিখে দিন
+            }
+        }
+    </script>
+</body>
+</html>
